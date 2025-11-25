@@ -1,0 +1,516 @@
+/* ================================
+   GLOBAL VARIABLES
+================================ */
+:root {
+    --primary: #ff7b25;
+    --primary-light: #ff9d5c;
+    --primary-dark: #e55a00;
+    --secondary: #ffb142;
+    --accent: #ff6b6b;
+    --light: #fff9f2;
+    --dark: #333333;
+    --gray: #6c757d;
+    --light-gray: #e9ecef;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: #fff;
+}
+
+/* ================================
+   CONTAINER
+================================ */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ================================
+   NAVIGATION BAR
+================================ */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition);
+    padding: 1rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo a {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--dark);
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+/* Login / Signup Button */
+.nav-auth-btn {
+    background: var(--primary);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav-auth-btn:hover {
+    background: var(--primary-dark);
+}
+
+/* ================================
+   HERO SECTION
+================================ */
+.hero {
+    padding: 150px 0 100px;
+    background: linear-gradient(135deg, #fff5e6 0%, #ffd8b3 100%);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.4rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: var(--dark);
+    max-width: 650px;
+    margin: 0 auto 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+/* Primary */
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+}
+
+/* Secondary */
+.btn-secondary {
+    background: var(--accent);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #ff5252;
+    transform: translateY(-3px);
+}
+
+/* ================================
+   SECTION STYLES
+================================ */
+section {
+    padding: 100px 0;
+}
+
+h2 {
+    font-size: 2.8rem;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 3rem;
+    color: var(--gray);
+}
+
+/* ================================
+   PROBLEM SECTION
+================================ */
+.problem-section {
+    background: var(--light);
+}
+
+.problem-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.problem-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    border-top: 5px solid var(--primary);
+    transition: var(--transition);
+}
+
+.problem-card:hover {
+    transform: translateY(-8px);
+}
+
+.problem-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+/* ================================
+   SOLUTION SECTION
+================================ */
+.solution-section {
+    background: var(--light);
+}
+
+.solution-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.solution-feature {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.solution-feature:hover {
+    transform: translateY(-5px);
+}
+
+.solution-feature i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* ================================
+   PATH SECTION
+================================ */
+.path-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.path-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.path-card:hover {
+    transform: translateY(-8px);
+}
+
+.path-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.path-header h3 {
+    font-size: 1.8rem;
+}
+
+/* ================================
+   EMERGENCY SECTION
+================================ */
+.emergency-section {
+    background: linear-gradient(135deg, #fff5e6, #ffebcc);
+}
+
+.emergency-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.emergency-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.emergency-card:hover {
+    transform: translateY(-10px);
+}
+
+.btn-emergency {
+    background: var(--accent);
+    color: white;
+}
+
+/* ================================
+   FOOTER
+================================ */
+footer {
+    background: var(--primary-dark);
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ================================
+   QUICK EXIT BUTTON
+================================ */
+.quick-exit {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.quick-exit:hover {
+    background: #ff5252;
+}
+
+/* ================================
+   AUTHENTICATION (Login/Signup)
+================================ */
+.auth-container {
+    max-width: 420px;
+    margin: 150px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.auth-form input,
+.auth-form select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.error-msg {
+    color: red;
+    margin: 5px 0;
+}
+
+.switch-link {
+    margin-top: 10px;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+}
+/* Fix Login / Signup UI */
+.auth-container {
+    max-width: 450px;
+    margin: 120px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.auth-container h2 {
+    font-size: 2.4rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-form input,
+.auth-form select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.auth-btn {
+    background: var(--primary);
+    color: white;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.auth-btn:hover {
+    background: var(--primary-dark);
+}
+
+.switch-link {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+/* ================================
+   EMERGENCY SECTION – IMPROVED
+================================ */
+.emergency-section {
+    background: linear-gradient(135deg, #fff4e3 0%, #ffe4c6 100%);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.emergency-section h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.emergency-section p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #6d6d6d;
+}
+
+/* Card container */
+.emergency-cards {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    padding: 20px 40px;
+}
+
+/* Single card */
+.emergency-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.emergency-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+.emergency-card h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.emergency-card p {
+    color: #555;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+/* Emergency card button */
+.emergency-card button,
+.btn-emergency {
+    background: var(--accent);
+    border: none;
+    padding: 15px 38px;
+    color: white;
+    border-radius: 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.emergency-card button:hover,
+.btn-emergency:hover {
+    background: #ff4646;
+    transform: translateY(-4px);
+}

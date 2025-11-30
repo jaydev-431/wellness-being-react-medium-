@@ -1,6 +1,6 @@
 export default function EmergencySection() {
   return (
-    <section className="emergency-section">
+    <section id="emergency" className="emergency-section">
       <h2>Emergency Resources</h2>
       <p>Immediate help is available 24/7.</p>
 
@@ -21,20 +21,18 @@ export default function EmergencySection() {
         </div>
 
         {/* Crisis Chat */}
-        {/* Crisis Chat */}
-      <div className="emergency-card">
-        <h3>Crisis Chat</h3>
-        <p>Live text support available</p>
+        <div className="emergency-card">
+          <h3>Crisis Chat</h3>
+          <p>Live text support available</p>
 
-        <a
-          href="https://findahelpline.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button className="btn-emergency">Start Chat</button>
-        </a>
-      </div>
-
+          <a
+            href="https://findahelpline.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="btn-emergency">Start Chat</button>
+          </a>
+        </div>
 
         {/* Local Shelters */}
         <div className="emergency-card">

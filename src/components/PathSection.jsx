@@ -1,16 +1,27 @@
+import { useNavigate } from "react-router-dom";
+
 export default function PathSection() {
+  const navigate = useNavigate();
 
-  const handleProtectedClick = () => {
-    const loggedIn = localStorage.getItem("user");
-
-    if (!loggedIn) {
-      window.location.href = "/login";
+  const handleProtectedClick = (role) => {
+    const userData = localStorage.getItem("user");
+    
+    if (!userData) {
+      navigate("/login");
       return;
+    }
+    
+    // Redirect to respective dashboard
+    const user = JSON.parse(userData);
+    if (user.role === role) {
+      navigate(`/${role}`);
+    } else {
+      alert(`You are logged in as ${user.role}. Please login as ${role} to access this dashboard.`);
     }
   };
 
   return (
-    <section id="path" className="path-section">
+    <section id="path-section" className="path-section">
       <div className="container">
         <h2>Choose Your Path to Healing</h2>
 
@@ -33,7 +44,10 @@ export default function PathSection() {
               <li><i className="fas fa-check"></i> Progress tracking</li>
             </ul>
 
-            <button className="btn btn-primary" onClick={handleProtectedClick}>
+            <button 
+              className="btn btn-primary" 
+              onClick={() => handleProtectedClick("victim")}
+            >
               Get Support Now
             </button>
           </div>
@@ -50,7 +64,10 @@ export default function PathSection() {
               <li><i className="fas fa-check"></i> Secure chat</li>
             </ul>
 
-            <button className="btn btn-primary" onClick={handleProtectedClick}>
+            <button 
+              className="btn btn-primary" 
+              onClick={() => handleProtectedClick("counselor")}
+            >
               Start Helping
             </button>
           </div>
@@ -67,7 +84,10 @@ export default function PathSection() {
               <li><i className="fas fa-check"></i> Legal assistance tools</li>
             </ul>
 
-            <button className="btn btn-primary" onClick={handleProtectedClick}>
+            <button 
+              className="btn btn-primary" 
+              onClick={() => handleProtectedClick("legal")}
+            >
               Provide Legal Aid
             </button>
           </div>
